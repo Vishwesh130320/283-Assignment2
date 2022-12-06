@@ -138,7 +138,6 @@
 ![image](https://user-images.githubusercontent.com/99626312/205790042-9184cc94-c948-42ed-a60d-56214e65e700.png)
 
 ### OutPut
-![image](https://user-images.githubusercontent.com/99626312/205790088-0d3a106d-fa78-417e-b082-20f8332f5322.png)
 ![image](https://user-images.githubusercontent.com/99626312/205790125-8e63da57-1141-4e67-92e5-1cda541c705c.png)
 
 ![image](https://user-images.githubusercontent.com/99626312/205790461-0618cbf6-14fa-423e-8262-f374f72890b5.png)
