@@ -352,7 +352,7 @@ static __always_inline void vmx_disable_fb_clear(struct vcpu_vmx *vmx)
 	msr = __rdmsr(MSR_IA32_MCU_OPT_CTRL);
 	msr |= FB_CLEAR_DIS;
 	native_wrmsrl(MSR_IA32_MCU_OPT_CTRL, msr);
-	/* Cache the MSR value to avoid reading it later */
+
 	vmx->msr_ia32_mcu_opt_ctrl = msr;
 }
 
