@@ -33,7 +33,7 @@ u32 xstate_required_size(u64 xstate_bv, bool compacted)
 		if (xstate_bv & 0x1) {
 		        u32 eax, ebx, ecx, edx, offset;
 		        cpuid_count(0xD, feature_bit, &eax, &ebx, &ecx, &edx);
-			/* ECX[1]: 64B alignment in compacted form */
+			
 			if (compacted)
 				offset = (ecx & 0x2) ? ALIGN(ret, 64) : ret;
 			else
@@ -48,11 +48,8 @@ u32 xstate_required_size(u64 xstate_bv, bool compacted)
 	return ret;
 }
 
-/*
- * This one is tied to SSB in the user API, and not
- * visible in /proc/cpuinfo.
- */
-#define KVM_X86_FEATURE_PSFD		(13*32+28) /* Predictive Store Forwarding Disable */
+
+#define KVM_X86_FEATURE_PSFD		(13*32+28) 
 
 #define F feature_bit
 #define SF(name) (boot_cpu_has(X86_FEATURE_##name) ? F(name) : 0)
@@ -79,10 +76,7 @@ static inline struct kvm_cpuid_entry2 *cpuid_entry2_find(
 
 		
 		if (index == KVM_CPUID_INDEX_NOT_SIGNIFICANT) {
-			/*
-			 * Direct lookups from KVM should not diverge from what
-			 * KVM defines internally (the architectural behavior).
-			 */
+			
 			WARN_ON_ONCE(cpuid_function_is_indexed(function));
 			return e;
 		}
